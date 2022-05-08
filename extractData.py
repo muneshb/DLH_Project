@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 pd.set_option('display.max_columns', None)
-filepath = "C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\data\\100000-Patients\\"
+filepath = "data/"
 
 def read_patient_data(filename, sep = "\t"):
     df = pd.read_csv(filename, sep=sep)
@@ -64,9 +64,9 @@ for x, patientid in enumerate(patient_list):
     df = adm_diag_full_df.loc[adm_diag_full_df['PatientID'] == patientid]
     res_df = find_index_date_subset(df)
     final_df = final_df.append(res_df)
-    final_df.to_csv("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\rawData.csv")
+    final_df.to_csv("rawData.csv")
 
-final_df = pd.read_csv("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\rawData.csv")
+final_df = pd.read_csv("rawData.csv")
 
 final_df['main_label'] = 'Diabetes'
 final_df.loc[final_df['label'] == 'M05', 'main_label'] = 'Rheumatoid Arthritis'
@@ -150,7 +150,7 @@ patient_dataset = {"train_data":train_data, "train_labels":train_labels, "test_d
 
 
 #save
-with open('C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\tensor_data.pickle', 'wb') as handle:
+with open('tensor_data.pickle', 'wb') as handle:
     pickle.dump(patient_dataset, handle)
 
 
@@ -186,12 +186,12 @@ for ind,pid in enumerate(final_patient_list):
 
 ####   saving the files   ####
 data_mat = np.nan_to_num(data_mat)
-np.save('C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\data_mat.npy', data_mat) # save
-proc_lab_final_df.to_pickle("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\proc_lab_final_df.pkl")
-pred_label_df.to_pickle("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\pred_label_df.pkl")
+np.save('data_mat.npy', data_mat) # save
+proc_lab_final_df.to_pickle("proc_lab_final_df.pkl")
+pred_label_df.to_pickle("pred_label_df.pkl")
 
-#data_mat_mod = np.load('C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\data_mat.npy') # load
+#data_mat_mod = np.load('data_mat.npy') # load
 #data_mat_mod = np.nan_to_num(data_mat_mod)
 
-#proc_lab_final_df_mod = pd.read_pickle("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\proc_lab_final_df.pkl")
-#pred_label_df_mod = pd.read_pickle("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\pred_label_df.pkl")
+#proc_lab_final_df_mod = pd.read_pickle("proc_lab_final_df.pkl")
+#pred_label_df_mod = pd.read_pickle("pred_label_df.pkl")
