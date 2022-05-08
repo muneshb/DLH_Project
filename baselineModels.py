@@ -8,9 +8,9 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 
-data_mat_mod = np.load('C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\data_mat.npy') # load
+data_mat_mod = np.load('data_mat.npy') # load
 
-pred_label_df_mod = pd.read_pickle("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\pred_label_df.pkl")
+pred_label_df_mod = pd.read_pickle("pred_label_df.pkl")
 pred_label_df_mod['pred_label'] = 1
 pred_label_df_mod.loc[pred_label_df_mod['main_label'] == "Diabetes", 'pred_label'] = 1
 pred_label_df_mod.loc[pred_label_df_mod['main_label'] == "Rheumatoid Arthritis", 'pred_label'] = 2
@@ -133,5 +133,5 @@ itml_metric, itml_cmat = itml_sim(data_mat_arr, pred_label_arr)
 #scml_metric = scml_sim(data_mat_arr, pred_label_arr)  ### taking too long to run
 
 err_df = pd.concat([euclidean_metric,cosine_metric, itml_metric, pca_metric])
-err_df.to_csv("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\Classification_results.csv")
+err_df.to_csv("results/Classification_results.csv")
 
