@@ -1,8 +1,7 @@
 import os
 import sys
 
-scriptpath = "C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\"
-sys.path.append(os.path.abspath(scriptpath))
+# sys.path.append(os.path.abspath(scriptpath))
 
 import pickle
 import torch
@@ -16,7 +15,7 @@ from nn_trainer import fit
 cuda = torch.cuda.is_available()
 
 
-with open('C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\tensor_data.pickle', 'rb') as handle:
+with open('tensor_data.pickle', 'rb') as handle:
     patient_dataset = pickle.load(handle)
 
 n_classes = 3
