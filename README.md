@@ -16,7 +16,12 @@ This paper aims at calculating a very important metric in Healthcare domain whic
 
 http://www.emrbots.org/
 
-100,000-patient (1.4GB) artificial EMR databases 
+100,000-patient (1.4GB) artificial EMR databases
+
+## Folder structure
+* `data` folder contains the raw files
+* `results` folder contains the stats and results of the models
+* **Root** folder contains all the code files
 
 ## Execution
 Execute the `main.sh` script to run below steps
