@@ -17,3 +17,9 @@ This paper aims at calculating a very important metric in Healthcare domain whic
 http://www.emrbots.org/
 
 100,000-patient (1.4GB) artificial EMR databases 
+
+## Execution
+Execute the `main.sh` script to run below steps
+* Data Processing
+* Baseline Modeling
+* CNN Modeling
