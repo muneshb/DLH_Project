@@ -56,7 +56,7 @@ def get_data_statistics(df):
     Osteonecrosis = [num_unique_patients['count'].iloc[1], num_unique_diagCodes['count'].iloc[1], num_uniq_codes_per_person['count'].iloc[1], total_num_of_events['count'].iloc[1], avg_num_visits['count'].iloc[1], avg_num_events[1]]
     RheumatoidArthritis = [num_unique_patients['count'].iloc[2], num_unique_diagCodes['count'].iloc[2], num_uniq_codes_per_person['count'].iloc[2], total_num_of_events['count'].iloc[2], avg_num_visits['count'].iloc[2], avg_num_events[2]]
     tab_df = pd.DataFrame({'Cohort': Cohort, 'Diabetes': Diabetes, 'Osteonecrosis': Osteonecrosis, 'Rheumatoid Arthritis': RheumatoidArthritis})
-    tab_df.to_csv("C:\\Users\\14088\\Documents\\Books\\CS598 - DLH\\paper32\\code\\dataStatistics.csv")
+    tab_df.to_csv("dataStatistics.csv")
     return tab_df
 
 final_df = pd.DataFrame()
