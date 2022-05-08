@@ -12,4 +12,8 @@ This paper aims at calculating a very important metric in Healthcare domain whic
   * Pandas
   * Numpy
 
+## Data Location
 
+http://www.emrbots.org/
+
+100,000-patient (1.4GB) artificial EMR databases 
