@@ -6,4 +6,4 @@ python extractData.py
 python baselineModels.py
 
 # CNN Modeling
-python cnn_Softmax_triplet.py
+python cnn_triplet.py
